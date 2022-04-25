@@ -12,10 +12,10 @@ class Product {
   Product.fromJson(Map json) {
     id = json["id"];
     categoryId = json["categoryId"];
-    productName = json["categoryId"];
+    productName = json["productName"];
     quantityPerUnit = json["quantityPerUnit"];
-    unitPrice = json["unitPrice"];
-    unitsInStock = json["unitsInStock"];
+    unitPrice = double.tryParse(json["unitPrice"].toString())!;
+    unitsInStock = int.tryParse(json["unitsInStock"].toString())!;
   }
 
   Map toJson() {
